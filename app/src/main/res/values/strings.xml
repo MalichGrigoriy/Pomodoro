@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">PomodoroFocus</string>
+    <string name="timer_task_hint">Task</string>
+    <string name="timer_start_button">Start</string>
+    <string name="timer_stop_button">Stop</string>
+    <string name="timer_restart_button">Restart</string>
+</resources>
