@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -18,9 +19,53 @@ android {
         minSdk = 24
         targetSdk = 36
         versionCode = 1
-        versionName = "1.0"
+        versionName = project.findProperty("versionName") as? String ?: "v0.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    applicationVariants.all {
+        val variant = this
+        variant.outputs
+            .map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
+            .forEach { output ->
+                val fileName =
+                    "PomodoroFocus-${variant.flavorName}-${variant.buildType.name}-${variant.versionName}-code${variant.versionCode}.apk"
+                output.outputFileName = fileName
+            }
+    }
+
+    signingConfigs {
+        create("release_config") {
+            // 1. Try Environment Variables (CI/CD)
+            var storeFilePath = System.getenv("RELEASE_STORE_FILE")
+            var storePasswordVal = System.getenv("RELEASE_STORE_PASSWORD")
+            var keyAliasVal = System.getenv("RELEASE_KEY_ALIAS")
+            var keyPasswordVal = System.getenv("RELEASE_KEY_PASSWORD")
+
+            // 2. If Env vars missing, try local.properties (Local Build)
+            if (storeFilePath == null || storePasswordVal == null) {
+                val keystorePropertiesFile = rootProject.file("local.properties")
+                if (keystorePropertiesFile.exists()) {
+                    val properties = Properties()
+                    properties.load(keystorePropertiesFile.inputStream())
+
+                    storeFilePath = properties.getProperty("RELEASE_STORE_FILE")
+                    storePasswordVal = properties.getProperty("RELEASE_STORE_PASSWORD")
+                    keyAliasVal = properties.getProperty("RELEASE_KEY_ALIAS")
+                    keyPasswordVal = properties.getProperty("RELEASE_KEY_PASSWORD")
+                }
+            }
+
+            if (!storeFilePath.isNullOrEmpty() && !storePasswordVal.isNullOrEmpty()) {
+                storeFile = file(storeFilePath)
+                storePassword = storePasswordVal
+                keyAlias = keyAliasVal
+                keyPassword = keyPasswordVal
+                enableV1Signing = true
+                enableV2Signing = true
+            }
+        }
     }
 
     buildTypes {
@@ -31,6 +76,10 @@ android {
         }
 
         release {
+            val config = signingConfigs.getByName("release_config")
+            if (config.storeFile != null) {
+                signingConfig = config
+            }
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -80,7 +129,7 @@ kotlin {
 }
 
 dependencies {
-    
+
     // Core & Lifecycle
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
