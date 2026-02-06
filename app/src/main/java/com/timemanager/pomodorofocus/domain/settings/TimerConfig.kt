@@ -10,10 +10,10 @@ const val TIMER_NEGATIVE_COLOR = true
 
 //first value is default
 val TIMER_TYPE_LIST = listOf(
-    TimerType.String,
-    TimerType.Dual,
     TimerType.LedMatrix,
     TimerType.Triple,
+    TimerType.String,
+    TimerType.Dual,
 )
 
 val TIMER_TYPE_DEFAULT = TIMER_TYPE_LIST.first()
