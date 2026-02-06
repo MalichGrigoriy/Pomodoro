@@ -2,26 +2,24 @@
 
 PomodoroFocus is a minimalistic timer application, distinguished by its unique **Custom LED Matrix Design**. Built to boost productivity using the standard **25-minute Pomodoro Technique**, it utilizes **Local Data Storage** to securely track your **Completed Tasks**. The app's responsive, custom-built interface ensures a focused, distraction-free experience.
 
-<div align="start">
-  <a href="https://github.com/MalichGrigoriy/Pomodoro/releases/latest">
-    <img height="100" alt="get-it-on-github" src="https://github.com/user-attachments/assets/f2567dc7-b242-422f-b43b-3187ed51f508" />
-  </a>
-</div>
+<a href="https://github.com/MalichGrigoriy/Pomodoro/releases/latest">
+  <img height="100" alt="Get it on GitHub" src="https://github.com/user-attachments/assets/f2567dc7-b242-422f-b43b-3187ed51f508" />
+</a>
 
 ## Screenshots
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/7529ff99-26c0-446a-8a34-111905dc8054" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/0abc7298-90b7-40ea-b79f-5da325287fea" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/2ed31d85-3dab-43d3-8fa5-e7673be76b3e" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/21a61d40-2b89-490c-8b53-7b151bd7858f" width="200" /></td>
+    <td><img src="https://github.com/user-attachments/assets/7529ff99-26c0-446a-8a34-111905dc8054" width="200" alt="Timer Screen Screenshot 1" /></td>
+    <td><img src="https://github.com/user-attachments/assets/0abc7298-90b7-40ea-b79f-5da325287fea" width="200" alt="Timer Screen Screenshot 2" /></td>
+    <td><img src="https://github.com/user-attachments/assets/2ed31d85-3dab-43d3-8fa5-e7673be76b3e" width="200" alt="Timer Screen Screenshot 3" /></td>
+    <td><img src="https://github.com/user-attachments/assets/21a61d40-2b89-490c-8b53-7b151bd7858f" width="200" alt="Statistic Screen Screenshot 1" /></td>
   </tr>
     <tr>
-    <td><img src="https://github.com/user-attachments/assets/f6d10749-5a03-4f57-a042-daaa9dd09764" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/5eda4a25-484e-48eb-8456-6c5e6ffb26bf" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/12fa1c81-b588-43eb-bb8a-2f8f1f24cd3f" width="200" /></td>
-    <td><img src="https://github.com/user-attachments/assets/3760b17f-80cb-4ed2-a034-428dfcfe4819" width="200" /></td>
+    <td><img src="https://github.com/user-attachments/assets/f6d10749-5a03-4f57-a042-daaa9dd09764" width="200" alt="Statistic Screen Screenshot 2" /></td>
+    <td><img src="https://github.com/user-attachments/assets/5eda4a25-484e-48eb-8456-6c5e6ffb26bf" width="200" alt="Settings Screen Screenshot 1" /></td>
+    <td><img src="https://github.com/user-attachments/assets/12fa1c81-b588-43eb-bb8a-2f8f1f24cd3f" width="200" alt="Settings Screen Screenshot 2" /></td>
+    <td><img src="https://github.com/user-attachments/assets/3760b17f-80cb-4ed2-a034-428dfcfe4819" width="200" alt="Settings Screen Screenshot 3" /></td>
   </tr>
 </table>
 
