@@ -1,6 +1,6 @@
 # Pomodoro Focus
 
-PomodoroFocus is a sleek and intuitive timer application designed to help you stay focused on your tasks and manage your time effectively using the Pomodoro Technique. With a minimalist design and diverse timer styles, it allows you to track specific goals, monitor your productivity history, and maintain a healthy work-life balance—all while ensuring your data remains completely private on your device.
+PomodoroFocus is a minimalistic timer application, distinguished by its unique **Custom LED Matrix Design**. Built to boost productivity using the standard **25-minute Pomodoro Technique**, it utilizes **Local Data Storage** to securely track your **Completed Tasks**. The app's responsive, custom-built interface ensures a focused, distraction-free experience.
 
 <div align="start">
   <a href="https://github.com/MalichGrigoriy/Pomodoro/releases/latest">
@@ -25,27 +25,30 @@ PomodoroFocus is a sleek and intuitive timer application designed to help you st
   </tr>
 </table>
 
-## Features
+## Technical Overview
 
-- **25-minute Pomodoro Timer**: Standard work intervals to boost productivity.
-- **Multiple Timer Designs**: Choose from several different visual themes for your timer.
-- **Completed Tasks List**: Keep track of your accomplished goals.
-- **Local Data Storage**: Your data remains private and stored on your device.
+- **Custom Compose Graphics**: Implemented a fully custom **LED Matrix Timer** using low-level Compose **Canvas** and **DrawScope**, carrying out complex pixel-grid calculations for responsive rendering on any screen size.
 
-## Technologies Used
+- **Clean Architecture & MVVM**: Strict separation of concerns (Domain/Data/UI) using **UseCases** and **Unidirectional Data Flow (UDF)**.
 
-- **Language**: Kotlin
-- **UI Framework**: Jetpack Compose
-- **Dependency Injection**: Hilt
-- **Local Database**: Room
-- **Navigation**: Navigation Compose
-- **Preferences**: DataStore
-- **Pagination**: Paging 3
+- **Modern Stack**: 100% **Kotlin** + **Jetpack Compose** following **Single Activity** architecture and **Material 3** design systems.
 
-## Architecture
+- **Data Persistence**: Optimized local storage using **Room** integrated with **Paging 3** for efficient handling of large datasets.
 
-This project follows modern Android development standards:
+- **State Management**: robust UI state handling using **ViewModel**, **StateFlow**, and the **State Holder** pattern.
 
-- **MVVM** (Model-View-ViewModel) pattern.
-- **Single Activity** architecture.
-- **Clean Architecture** principles (separation of UI, Domain, and Data layers).
+- **Coroutines & Flow**: Managed concurrency and reactive streams.
+
+- **Hilt**: Dependency Injection for decoupling components.
+
+## Future Improvements (Planned)
+
+- **Type-Safe Navigation**: Migrating from string-based routes to the new **Navigation 3** with control of back stack.
+  
+- **Background Execution**: Implementing **Foreground Services** with Android 14+ compatibility to ensure the timer runs reliably even when the app is minimized or the screen is off.
+  
+- **App Widgets (Glance)**: Creating reactive Home Screen and Lock Screen widgets using **Jetpack Glance** for quick timer access.
+  
+- **Cloud Synchronization & Auth**: Adding user accounts (e.g., Firebase Auth) and cross-device sync (Offline-First architecture) to allow seamless transition between devices.
+  
+- **CI/CD Pipeline**: Automated GitHub Actions for linting and testing.
