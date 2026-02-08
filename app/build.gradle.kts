@@ -18,8 +18,8 @@ android {
         applicationId = "com.timemanager.pomodorofocus"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = project.findProperty("versionName") as? String ?: "v0.0.1"
+        versionCode = 2
+        versionName = project.findProperty("versionName") as? String ?: "v0.1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
