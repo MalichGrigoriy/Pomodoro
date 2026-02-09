@@ -25,7 +25,7 @@ PomodoroFocus is a minimalistic timer application, distinguished by its unique *
 
 ## Technical Overview
 
-- **Custom Compose Graphics**: Implemented a fully custom **LED Matrix Timer** using low-level Compose **Canvas** and **DrawScope**, carrying out complex pixel-grid calculations for responsive rendering on any screen size.
+- **Custom Compose Graphics**: Developed as a practice and demonstration of Jetpack Compose, this project features a fully custom [**LED Matrix Timer**](app/src/main/java/com/timemanager/pomodorofocus/ui/timer/pixelView/LedMatrixTimer.kt). It leverages low-level **Canvas** and **DrawScope** for complex pixel-grid calculations and responsive rendering on any screen size.
 
 - **Clean Architecture & MVVM**: Strict separation of concerns (Domain/Data/UI) using **UseCases** and **Unidirectional Data Flow (UDF)**.
 
